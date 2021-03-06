@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # local files 
-./topic_modelling/data/wiki.csv
+/topic_modelling/data/
