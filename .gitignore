@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# local files 
+./topic_modelling/data/wiki.csv
