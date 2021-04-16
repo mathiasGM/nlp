@@ -40,7 +40,6 @@ def remove_stopwords(text):
   word_tokens = word_tokenize(text)
 
   filtered_sentence = [w for w in word_tokens if not w in stop_words]
-
   sentence_no_stopwords = " ".join(filtered_sentence)
   
   return sentence_no_stopwords.strip()
