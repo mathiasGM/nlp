@@ -57,3 +57,13 @@ def string_to_chunks(string_input, n):
         sentences_chunks.append(sentence)
         
     return sentences_chunks
+  
+
+  
+# -- Other useful functions ---
+
+test_string = "this string contains the word gaucho"
+relevant_strings = ["gaucho", "space", "pool"]
+# Check if string contains any of the words in list:
+if any(word in test_string.lower() for word in relevant_strings):
+    print("String contains word in relevant strings array")
