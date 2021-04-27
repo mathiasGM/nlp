@@ -1,11 +1,14 @@
 import re, nltk
 from nltk.stem import WordNetLemmatizer
-from nltk.stem import PorterStemmer
+from nltk.stem import PorterStemmer, SnowballStemmer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 nltk.download('wordnet')
 nltk.download('punkt')
 nltk.download('stopwords')
+
+stopwords_nltk = stopwords.words('danish')
+stemmer_nltk = SnowballStemmer("danish")
 
 
 def lemmatize(text):
@@ -59,6 +62,15 @@ def string_to_chunks(string_input, n):
     return sentences_chunks
   
 
+def tokenize_and_stem(text):
+    tokens = [token for token in word_tokenize(text, language="danish")]
+
+    #exclude stopwords from stemmed words
+    stems = [stemmer_nltk.stem(t) for t in tokens if t not in stopwords_nltk]
+
+    return stems
+  
+  
   
 # -- Other useful functions ---
 
